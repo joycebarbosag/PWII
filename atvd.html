@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funções Recursivas</title>
+</head>
+<body>
+
+<div style="text-align: center; align-items: center;">
+    <h1>Escolha uma função para chamar:</h1>
+<select id="selectFunction" style="padding: 10px; border-radius: 5px;">
+  <option value="recToN">RecToN</option>
+  <option value="divRecToN">DivRecToN</option>
+  <option value="powRec">PowRec</option>
+  <option value="tribonacci">Tribonacci</option>
+  <option value="pell">Pell</option>
+</select>
+<button style="border-radius: 5px; border: none; padding: 10px; 
+background-color: blue; color: white;" 
+onclick="executarFuncao()">Executar</button>
+<h1 id="resultado"></h1>
+</div>
+
+<script src="atvd.js"></script>
+<script>
+function executarFuncao() {
+  var selectElement = document.getElementById("selectFunction");
+  var selectedValue = selectElement.value;
+  var resultado;
+
+  var n = parseInt(prompt("Digite o valor de n:"));
+
+  switch(selectedValue) {
+    case "recToN":
+      resultado = recToN(n);
+      break;
+    case "divRecToN":
+      resultado = divRecToN(n);
+      break;
+    case "powRec":
+      var x = parseInt(prompt("Digite o valor de x:"));
+      resultado = powRec(x, n);
+      break;
+    case "tribonacci":
+      resultado = tribonacci(n);
+      break;
+    case "pell":
+      resultado = pell(n);
+      break;
+    default:
+      resultado = "Selecione uma função";
+  }
+
+  document.getElementById("resultado").textContent = resultado;
+}
+</script>
+
+</body>
+</html>
